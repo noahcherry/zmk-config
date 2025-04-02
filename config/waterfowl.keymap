@@ -31,7 +31,7 @@
 &kp Q             &kp W        &kp E           &kp R         &kp T             &kp Y            &kp U        &kp I                &kp O          &kp P
 &kp A             &kp S        &kp D           &kp F         &kp G             &kp H            &kp J        &kp K                &kp L          &kp SEMI
 &mt LEFT_SHIFT Z  &mt LCTRL X  &mt LEFT_ALT C  &kp V         &mt LEFT_GUI B    &mt RIGHT_GUI N  &kp M        &mt RIGHT_ALT COMMA  &mt LCTRL DOT  &mt RIGHT_SHIFT FSLH
-&kp CAPSLOCK            &lt 1 DEL    &lt 2 SPACE     &lt 3 ESCAPE  &kp N2            &kp N3           &lt 1 ENTER  &lt 2 BSPC           &lt 3 TAB      &kp K_MUTE
+&kp CAPSLOCK            &lt 1 DEL    &lt 2 SPACE     &lt 3 ESCAPE  &tog 1            &tog 1           &lt 1 ENTER  &lt 2 BSPC           &lt 3 TAB      &kp K_MUTE
             >;
 
             sensor-bindings = <
@@ -77,7 +77,7 @@
 &trans     &kp PG_UP  &kp UP       &kp PG_DN  &trans      &kp FSLH   &kp N7     &kp N8      &kp N9     &kp MINUS
 &kp HOME   &kp LEFT   &kp DOWN     &kp RIGHT  &kp END     &kp EQUAL  &kp N4     &kp N5      &kp N6     &kp PLUS
 &kp LSHFT  &kp RET    &kp INS      &kp LCTRL  &kp LALT    &kp N0     &kp N1     &kp N2      &kp N3     &kp ASTERISK
-&kp N1     &lt 1 DEL  &lt 2 SPACE  &lt 3 TAB  &kp N2      &kp N3     &lt 1 ESC  &lt 2 BSPC  &lt 3 RET  &kp N4
+&kp CAPSLOCK     &lt 1 DEL  &lt 2 SPACE  &lt 3 TAB  &tog 1            &tog 1     &lt 1 ESC  &lt 2 BSPC  &lt 3 RET  &kp K_MUTE
             >;
 
             sensor-bindings = <
@@ -107,7 +107,7 @@
 &kp PRCNT  &kp AT     &kp LBKT     &kp RBKT   &kp NON_US_BSLH    &trans     &trans     &kp CARET          &trans     &trans
 &kp HASH   &kp EXCL   &kp LPAR     &kp RPAR   &kp PIPE           &kp UNDER  &kp APOS   &kp DOUBLE_QUOTES  &kp TILDE  &kp GRAVE
 &kp DLLR   &trans     &kp LBRC     &kp RBRC   &kp AMPS           &trans     &trans     &trans             &trans     &trans
-&kp N1     &lt 1 DEL  &lt 2 SPACE  &lt 3 TAB  &kp N2             &kp N3     &lt 1 ESC  &lt 2 BSPC         &lt 3 RET  &kp N4
+&kp CAPSLOCK     &lt 1 DEL  &lt 2 SPACE  &lt 3 TAB  &tog 1            &tog 1     &lt 1 ESC  &lt 2 BSPC         &lt 3 RET  &kp K_MUTE
             >;
 
             sensor-bindings = <
@@ -137,7 +137,7 @@
 &trans        &trans        &bt BT_CLR    &trans        &sys_reset      &sys_reset  &kp F7     &kp F8      &kp F9     &kp F11
 &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &trans      &kp F4     &kp F5      &kp F6     &kp F12
 &trans        &trans        &trans        &trans        &trans          &kp F10     &kp F1     &kp F2      &kp F3     &kp F13
-&kp N1        &lt 1 DEL     &lt 2 SPACE   &lt 3 TAB     &kp N2          &kp N3      &lt 1 ESC  &lt 2 BSPC  &lt 3 RET  &kp N4
+&kp CAPSLOCK        &lt 1 DEL     &lt 2 SPACE   &lt 3 TAB     &tog 1            &tog 1      &lt 1 ESC  &lt 2 BSPC  &lt 3 RET  &kp K_MUTE
             >;
 
             sensor-bindings = <
