@@ -11,7 +11,7 @@ manifest:
       remote: zmkfirmware
       revision: main
       import: app/west.yml
-    - name: nice-shield-v1
+    - name: nice-view-tamogatchi
       remote: noahcherry
       revision: main
   self:
