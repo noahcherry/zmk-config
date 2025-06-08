@@ -9,6 +9,26 @@
 #include <dt-bindings/zmk/keys.h>
 
 / {
+    macros {
+        bitwarden: bitwarden {
+            compatible = "zmk,behavior-macro";
+            wait-ms = <40>;
+            tap-ms = <40>;
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp T &kp W>
+                , <&macro_press &kp LSHFT>
+                , <&macro_tap &kp I >
+                , <&macro_release &kp LSHFT>
+                , &kp C &kp E &kp UNDER &kp A &kp C &kp C &kp O &kp M &kp P &kp L &kp I &kp S &kp H &kp E &kp D &kp QMARK &kp 1>
+                ;
+        };
+    };
+};
+
+
+
+/ {
     keymap {
         compatible = "zmk,keymap";
 
@@ -106,11 +126,11 @@
 /* FUNC
  *
  * ,----------------------------------.                      ,----------------------------------.
- * |      |      | BTCLR|      | Reset|                      | Reset|  F7  |  F8  |  F9  |  F11 |
+ * |  BT0 |  BT1 |  BT2 | BTCLR| Reset|                      | Reset|  F7  |  F8  |  F9  |  F11 |
  * |------+------+------+------+------|                      |------+------+------+------+------|
- * |  BT0 |  BT1 |  BT2 |  BT3 |  BT4 |                      |      |  F4  |  F5  |  F6  |  F12 |
+ * |      | PREV |  ⏯ |  NXT |      |                      |      |  F4  |  F5  |  F6  |  F12 |
  * |------+------+------+------+------|  ,-----.    ,-----.  |------+------+------+------+------|
- * |      |      |      |      |      |  |  2  |    |  3  |  |  F10 |  F1  |  F2  |  F3  |  F13 |
+ * | MACRO|      |      |      |      |  |  2  |    |  3  |  |  F10 |  F1  |  F2  |  F3  |  F13 |
  * `----------------------------------'  `-----'    `-----'  `----------------------------------'
  *          ,-----.   ,--------------------.            ,--------------------.   ,-----.
  *          |  1  |   | DEL | SPACE | ESC  |            |  ENTER  | BS | TAB |   |  4  |
@@ -118,10 +138,10 @@
  */
 
             bindings = <
-&trans            &trans       &bt BT_CLR    &trans        &sys_reset      &sys_reset       &kp F7       &kp F8      &kp F9     &kp F11
-&bt BT_SEL 0      &bt BT_SEL 1 &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &trans           &kp F4       &kp F5      &kp F6     &kp F12
-&trans            &trans       &trans        &trans        &trans          &kp F10          &kp F1       &kp F2      &kp F3     &kp F13
-&kp CAPSLOCK      &lt 1 TAB    &lt 2 SPACE   &lt 3 ESCAPE  &kt LCTRL       &kt LEFT_SHIFT   &lt 1 ENTER  &lt 2 BSPC  &lt 3 DEL  &kp C_MUTE
+&bt BT_SEL 0    &bt BT_SEL 1 &bt BT_SEL 2  &bt BT_CLR    &sys_reset      &sys_reset       &kp F7       &kp F8      &kp F9     &kp F11
+&trans          &kp C_PREV   &kp C_PP      &kp C_NEXT    &trans          &trans           &kp F4       &kp F5      &kp F6     &kp F12
+&bitwarden      &trans       &trans        &trans        &trans          &kp F10          &kp F1       &kp F2      &kp F3     &kp F13
+&kp CAPSLOCK    &lt 1 TAB    &lt 2 SPACE   &lt 3 ESCAPE  &kt LCTRL       &kt LEFT_SHIFT   &lt 1 ENTER  &lt 2 BSPC  &lt 3 DEL  &kp C_MUTE
             >;
 
             sensor-bindings = <
