@@ -20,7 +20,7 @@
                 , <&macro_press &kp LSHFT>
                 , <&macro_tap &kp I >
                 , <&macro_release &kp LSHFT>
-                , <&macro_tap &kp C &kp E &kp UNDER &kp A &kp C &kp C &kp O &kp M &kp P &kp L &kp I &kp S &kp H &kp E &kp D &kp QMARK &kp 1>
+                , <&macro_tap &kp C &kp E &kp UNDER &kp A &kp C &kp C &kp O &kp M &kp P &kp L &kp I &kp S &kp H &kp E &kp D &kp QMARK &kp N1>
                 ;
         };
     };
