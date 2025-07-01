@@ -9,6 +9,13 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
 
+// Layer Definitions
+#define QWERTY 0
+#define COLEMAK 1
+#define NAVNUM 2
+#define SYMBOL 3
+#define FUNCTIONS 4
+#define GAMING 5
 
 
 / {
@@ -44,11 +51,35 @@
 / {
     combos {
         compatible = "zmk,combos";
-        combo_gaming_toggle {
+        combo_qwertycolemak_toggle {
             timeout-ms = <50>;
-            key-positions = <26 27 28>;
-            layers = <0 4>;
-            bindings = <&to 4>;
+            key-positions = <15 16 17>;
+            layers = <QWERTY>;
+            bindings = <&to COLEMAK>;
+        };
+        combo_colemakqwerty_toggle {
+            timeout-ms = <50>;
+            key-positions = <15 16 17>;
+            layers = <COLEMAK>;
+            bindings = <&to QWERTY>;
+        };
+        combo_alpha_to_gaming {
+            timeout-ms = <50>;
+            key-positions = <25 26 27>;
+            layers = <QWERTY COLEMAK>;
+            bindings = <&to GAMING>;
+        };
+        combo_gaming_to_qwerty {
+            timeout-ms = <50>;
+            key-positions = <25 26 27>;
+            layers = <GAMING>;
+            bindings = <&to QWERTY>;
+        };
+        combo_gaming_to_colemak {
+            timeout-ms = <50>;
+            key-positions = <15 16 17>;
+            layers = <GAMING>;
+            bindings = <&to COLEMAK>;
         };
     };
 };
@@ -59,8 +90,8 @@
     keymap {
         compatible = "zmk,keymap";
 
-        Alpha {
-/* QWERTY
+        qwerty {
+/* 
  *
  * ,----------------------------------.                      ,----------------------------------.
  * |   Q  |   W  |   E  |   R  |   T  |                      |   Y  |   U  |   I  |   O  |   P  |
@@ -75,10 +106,10 @@
  */
 
             bindings = <
-&kp Q             &kp W        &kp E           &kp R         &kp T             &kp Y            &kp U        &kp I                &kp O          &kp P
-&kp A             &kp S        &kp D           &kp F         &kp G             &kp H            &kp J        &kp K                &kp L          &kp SEMI
-&mt LEFT_SHIFT Z  &mt LCTRL X  &mt LEFT_ALT C  &kp V         &kp B             &kp N            &kp M        &mt RIGHT_ALT COMMA  &mt LCTRL DOT  &mt RIGHT_SHIFT FSLH
-&kp CAPSLOCK      &lt 1 TAB    &lt 2 SPACE     &lt 3 ESCAPE  &kt LCTRL         &kt LEFT_SHIFT   &lt 3 ENTER  &lt 2 BSPC           &lt 1 DEL      &kp C_MUTE
+&kp Q         &kp W           &kp E             &kp R                 &kp T      &kp Y           &kp U                &kp I            &kp O           &kp P
+&kp A         &kp S           &kp D             &kp F                 &kp G      &kp H           &kp J                &kp K            &kp L           &kp SEMI
+&mt LSHFT Z   &mt LCTRL X     &mt LALT C        &kp V                 &kp B      &kp N           &kp M                &mt RALT COMMA   &mt LCTRL DOT   &mt RSHFT FSLH
+&kp CAPSLOCK  &lt NAVNUM TAB  &lt SYMBOL SPACE  &lt FUNCTIONS ESCAPE  &kt LCTRL  &kt LEFT_SHIFT  &lt FUNCTIONS ENTER  &lt SYMBOL BSPC  &lt NAVNUM DEL  &kp C_MUTE
             >;
 
             sensor-bindings = <
@@ -89,8 +120,38 @@
             >;
         };
 
-        Nav+Num {
-/* NAVNUM
+        colemak {
+ /* 
+ *
+ * ,----------------------------------.                      ,----------------------------------.
+ * |   Q  |   W  |   F  |   P  |   B  |                      |   J  |   L  |   U  |   Y  |   '  |
+ * |------+------+------+------+------|                      |------+------+------+------+------|
+ * |   A  |   R  |   S  |   T  |   G  |                      |   M  |   N  |   E  |   I  |   O  |
+ * |------+------+------+------+------|  ,-----.    ,-----.  |------+------+------+------+------|
+ * |   Z  |   X  |   C  |   D  |   V  |  |  2  |    |  3  |  |   K  |   H  |   ,  |   .  |   /  |
+ * `----------------------------------'  `-----'    `-----'  `----------------------------------'
+ *          ,-----.   ,--------------------.            ,--------------------.   ,-----.
+ *          |  1  |   | TAB | SPACE | ESC  |            |  ENTER  | BS | DEL |   |  4  |
+ *          `-----'   `--------------------'            `--------------------'   `-----'
+ */
+
+            bindings = <
+&kp Q         &kp W           &kp F             &kp P                 &kp B      &kp J           &kp L                &kp U            &kp Y           &kp '
+&kp A         &kp R           &kp S             &kp T                 &kp G      &kp M           &kp N                &kp E            &kp I           &kp O
+&mt LSHFT Z   &mt LCTRL X     &mt LALT C        &kp D                 &kp V      &kp K           &kp H                &mt RALT COMMA   &mt LCTRL DOT   &mt RSHFT FSLH
+&kp CAPSLOCK  &lt NAVNUM TAB  &lt SYMBOL SPACE  &lt FUNCTIONS ESCAPE  &kt LCTRL  &kt LEFT_SHIFT  &lt FUNCTIONS ENTER  &lt SYMBOL BSPC  &lt NAVNUM DEL  &kp C_MUTE
+            >;
+
+            sensor-bindings = <
+                &inc_dec_kp C_VOL_DN C_VOL_UP
+                &inc_dec_kp UP DOWN
+                &inc_dec_kp LEFT RIGHT
+                &inc_dec_kp C_BRIGHTNESS_DEC C_BRIGHTNESS_INC
+            >;
+        };
+
+        NAVNUM {
+/* 
  *
  * ,--------------------------------==--.                      ,----------------------------------.
  * |       | PgUp  |  UP  | PgDn |      |                      |   /  |   7  |   8  |   9  |   -  |
@@ -119,8 +180,8 @@
             >;
         };
 
-        Symbol {
-/* SYM
+        symbol {
+/* 
  *
  * ,----------------------------------.                      ,----------------------------------.
  * |   %  |   @  |   [  |   ]  |   \  |                      |      |      |   ^  |      |      |
@@ -149,8 +210,8 @@
             >;
         };
 
-        Function {
-/* FUNC
+        function {
+/* 
  *
  * ,----------------------------------.                      ,----------------------------------.
  * |  BT0 |  BT1 |  BT2 | BTCLR| Reset|                      | Reset|  F7  |  F8  |  F9  |  F11 |
@@ -160,7 +221,7 @@
  * |MACRO1|MACRO2|      |      |LAYER4|  |  2  |    |  3  |  |  F10 |  F1  |  F2  |  F3  |  F13 |
  * `----------------------------------'  `-----'    `-----'  `----------------------------------'
  *          ,-----.   ,--------------------.            ,--------------------.   ,-----.
- *          |  1  |   | DEL | SPACE | ESC  |            |  ENTER  | BS | TAB |   |  4  |
+ *          |  1  |   | TAB | SPACE | ESC  |            |  ENTER  | BS | DEL |   |  4  |
  *          `-----'   `--------------------'            `--------------------'   `-----'
  */
 
@@ -179,26 +240,26 @@
             >;
         };
 
-        Gaming {
-/* Gaming
+        gaming {
+/* 
  *
  * ,----------------------------------.                      ,----------------------------------.
  * | ESC  |   Q  |   W  |   E  |   R  |                      |   1  |   2  |   3  |   4  |   5  |
  * |------+------+------+------+------|                      |------+------+------+------+------|
  * | SHFT |   A  |   S  |   D  |   F  |                      |   6  |   7  |   8  |   9  |   0  |
  * |------+------+------+------+------|  ,-----.    ,-----.  |------+------+------+------+------|
- * | CTRL |   Z  |   X  |   C  |   V  |  |  I  |    |  3  |  |      |      |      |      |      |
+ * | CTRL |   Z  |   X  |   C  |   V  |  |  I  |    |  PS |  |   G  |   J  |   P  |   U  |   `  |
  * `----------------------------------'  `-----'    `-----'  `----------------------------------'
  *          ,-----.   ,--------------------.            ,--------------------.   ,-----.
- *          |  M  |   | TAB | SPACE | ENTR |            |       |     |      |   |  4  |
+ *          |  M  |   | TAB | SPACE | ENTR |            |    L1   | L2 |  L4 |   |  4  |
  *          `-----'   `--------------------'            `--------------------'   `-----'
  */
 
             bindings = <
 &kp ESCAPE      &kp Q      &kp W        &kp E       &kp R          &kp N1           &kp N2        &kp N3          &kp N4     &kp N5
 &kp LEFT_SHIFT  &kp A      &kp S        &kp D       &kp F          &kp N6           &kp N7        &kp N8          &kp N9     &kp N0
-&kp LCTRL       &kp Z      &kp X        &kp C       &kp V          &trans           &trans        &trans          &trans     &trans
-&kp M           &kp TAB    &kp SPACE    &kp ENTER   &kp I          &trans           &mo 1         &mo 2           &mo 3      &kp C_MUTE
+&kp LCTRL       &kp Z      &kp X        &kp C       &kp V          &kp G            &kp j         &kp p           &kp u      &kp GRAVES
+&kp M           &kp TAB    &kp SPACE    &kp ENTER   &kp I          &kp PSCRN        &mo 1         &mo 2           &mo 3      &kp C_MUTE
             >;
 
             sensor-bindings = <
