@@ -258,7 +258,7 @@
             bindings = <
 &kp ESCAPE      &kp Q      &kp W        &kp E       &kp R          &kp N1           &kp N2        &kp N3          &kp N4     &kp N5
 &kp LEFT_SHIFT  &kp A      &kp S        &kp D       &kp F          &kp N6           &kp N7        &kp N8          &kp N9     &kp N0
-&kp LCTRL       &kp Z      &kp X        &kp C       &kp V          &kp G            &kp j         &kp p           &kp u      &kp GRAVES
+&kp LCTRL       &kp Z      &kp X        &kp C       &kp V          &kp G            &kp j         &kp p           &kp u      &kp GRAVE
 &kp M           &kp TAB    &kp SPACE    &kp ENTER   &kp I          &kp PSCRN        &mo 1         &mo 2           &mo 3      &kp C_MUTE
             >;
 
