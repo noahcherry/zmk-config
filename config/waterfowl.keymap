@@ -87,31 +87,31 @@
 
         //Gaming Layer Combos
 
-        combo_gaming_to_colemak {
+        combo_gaming_lhand_1 {
             timeout-ms = <50>;
             key-positions = <33 20>;
             layers = <GAMING>;
             bindings = <&kp N1>;
         };
-        combo_gaming_to_colemak {
+        combo_gaming__lhand_2 {
             timeout-ms = <50>;
             key-positions = <33 21>;
             layers = <GAMING>;
             bindings = <&kp N2>;
         };
-        combo_gaming_to_colemak {
+        combo_gaming__lhand_3 {
             timeout-ms = <50>;
             key-positions = <33 22>;
             layers = <GAMING>;
             bindings = <&kp N3>;
         };
-        combo_gaming_to_colemak {
+        combo_gaming__lhand_4 {
             timeout-ms = <50>;
             key-positions = <33 23>;
             layers = <GAMING>;
             bindings = <&kp N4>;
         };
-        combo_gaming_to_colemak {
+        combo_gaming__lhand_5 {
             timeout-ms = <50>;
             key-positions = <33 24>;
             layers = <GAMING>;
