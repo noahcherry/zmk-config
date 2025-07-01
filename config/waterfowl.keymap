@@ -23,16 +23,20 @@
                 , <&macro_tap &kp C &kp E &kp UNDER &kp A &kp C &kp C &kp O &kp M &kp P &kp L &kp I &kp S &kp H &kp E &kp D &kp QMARK &kp N1>
                 ;
         };
+
         email: email {
             compatible = "zmk,behavior-macro";
             wait-ms = <40>;
             tap-ms = <40>;
             #binding-cells = <0>;
             bindings
-                = <&macro_tap &kp N &kp O &kp A &kp H &kp P &kp I &kp N &kp E &kp A &kp P &kp P &kp L &kp E &kp AT &kp G &kp M &kp A &kp I &kp L &kp DOT &kp C &kp O &kp M>;
+                = <&macro_tap &kp N &kp O &kp A &kp H &kp P &kp I &kp N &kp E &kp A &kp P &kp P &kp L &kp E &kp AT &kp G &kp M &kp A &kp I &kp L &kp DOT &kp C &kp O &kp M>
+                ;
         };
     };
 };
+
+
 
 / {
     combos {
@@ -188,10 +192,10 @@
  */
 
             bindings = <
-&kp ESCAPE      &kp Q      &kp W        &kp E       &kp R              &kp N1           &kp N2        &kp N3          &kp N4     &kp N5
-&kp LEFT_SHIFT  &kp A      &kp S        &kp D       &kp F              &kp N6           &kp N7        &kp N8          &kp N9     &kp N0
-&kp LCTRL       &kp Z      &kp X        &kp C       &kp V              &trans           &trans        &trans          &trans     &trans
-&kp M           &kp TAB    &kp SPACE    &kp ENTER   &kp I              &kt LEFT_SHIFT   &mo1          &mo 2           &mo3       &kp C_MUTE
+&kp ESCAPE      &kp Q      &kp W        &kp E       &kp R          &kp N1           &kp N2        &kp N3          &kp N4     &kp N5
+&kp LEFT_SHIFT  &kp A      &kp S        &kp D       &kp F          &kp N6           &kp N7        &kp N8          &kp N9     &kp N0
+&kp LCTRL       &kp Z      &kp X        &kp C       &kp V          &trans           &trans        &trans          &trans     &trans
+&kp M           &kp TAB    &kp SPACE    &kp ENTER   &kp I          &kt LEFT_SHIFT   &mo 1          &mo 2           &mo 3       &kp C_MUTE
             >;
 
             sensor-bindings = <
