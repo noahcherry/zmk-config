@@ -51,6 +51,9 @@
 / {
     combos {
         compatible = "zmk,combos";
+
+        //Layer Toggle Combos
+
         combo_qwertycolemak_toggle {
             timeout-ms = <50>;
             key-positions = <15 16 17>;
@@ -80,6 +83,39 @@
             key-positions = <15 16 17>;
             layers = <GAMING>;
             bindings = <&to COLEMAK>;
+        };
+
+        //Gaming Layer Combos
+
+        combo_gaming_to_colemak {
+            timeout-ms = <50>;
+            key-positions = <33 20>;
+            layers = <GAMING>;
+            bindings = <&kp N1>;
+        };
+        combo_gaming_to_colemak {
+            timeout-ms = <50>;
+            key-positions = <33 21>;
+            layers = <GAMING>;
+            bindings = <&kp N2>;
+        };
+        combo_gaming_to_colemak {
+            timeout-ms = <50>;
+            key-positions = <33 22>;
+            layers = <GAMING>;
+            bindings = <&kp N3>;
+        };
+        combo_gaming_to_colemak {
+            timeout-ms = <50>;
+            key-positions = <33 23>;
+            layers = <GAMING>;
+            bindings = <&kp N4>;
+        };
+        combo_gaming_to_colemak {
+            timeout-ms = <50>;
+            key-positions = <33 24>;
+            layers = <GAMING>;
+            bindings = <&kp N5>;
         };
     };
 };
@@ -251,7 +287,7 @@
  * | CTRL |   Z  |   X  |   C  |   V  |  |  I  |    |  PS |  |   G  |   J  |   P  |   U  |   `  |
  * `----------------------------------'  `-----'    `-----'  `----------------------------------'
  *          ,-----.   ,--------------------.            ,--------------------.   ,-----.
- *          |  M  |   | TAB | SPACE | ENTR |            |    L1   | L2 |  L4 |   |  4  |
+ *          |  M  |   | TAB | SPACE | ALT  |            |    L1   | L2 |  L4 |   |  4  |
  *          `-----'   `--------------------'            `--------------------'   `-----'
  */
 
@@ -259,7 +295,7 @@
 &kp ESCAPE      &kp Q      &kp W        &kp E       &kp R          &kp N1           &kp N2        &kp N3          &kp N4     &kp N5
 &kp LEFT_SHIFT  &kp A      &kp S        &kp D       &kp F          &kp N6           &kp N7        &kp N8          &kp N9     &kp N0
 &kp LCTRL       &kp Z      &kp X        &kp C       &kp V          &kp G            &kp J         &kp P           &kp U      &kp GRAVE
-&kp M           &kp TAB    &kp SPACE    &kp ENTER   &kp I          &kp PSCRN        &mo 1         &mo 2           &mo 3      &kp C_MUTE
+&kp M           &kp TAB    &kp SPACE    &kp LALT    &kp I          &kp PSCRN        &mo 1         &mo 2           &mo 3      &kp C_MUTE
             >;
 
             sensor-bindings = <
